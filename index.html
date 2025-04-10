@@ -52,21 +52,19 @@
                     <!-- Logo container with flex properties to center the text -->
                     <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
                     <div class="flex flex-shrink-0 items-center">
-                        <!-- Custom color for the logo text using hex code -->
-                        <!-- The color #d4c5a9 provides a warm, fantasy-themed accent that complements the design -->
-                        <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
+                        <a href="index.html" class="hover:opacity-80 transition-opacity">
+                            <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
+                        </a>
                     </div>
                     
                     <!-- Navigation links with spacing between them -->
                     <!-- ml-6 adds margin to separate the links from the logo -->
                     <!-- space-x-8 ensures consistent spacing between navigation items -->
                     <div class="ml-6 flex space-x-8">
-                        <!-- Each link has the nav-button class for consistent styling -->
-                        <!-- The nav-button class (defined in styles.css) provides hover effects and transitions -->
+                        <a href="index.html" class="nav-button">Home</a>
                         <a href="games-page.html" class="nav-button">Games</a>
-                        <a href="#" class="nav-button">Reviews</a>
-                        <a href="community.html" class="nav-button">Community</a>
-                        <a href="#" class="nav-button">About</a>
+                        <a href="about-page.html" class="nav-button">About</a>
+                        <a href="contact-us.html" class="nav-button">Contact</a>
                     </div>
                 </div>
             </div>
@@ -133,13 +131,13 @@
                     <!-- Primary button with hover and focus states for accessibility -->
                     <!-- The focus-visible classes ensure the button is accessible for keyboard navigation -->
                     <!-- hover:bg-indigo-500 provides visual feedback on interaction -->
-                    <a href="#" class="quest-button rounded-md px-6 py-3 text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    <a href="games-page.html" class="quest-button rounded-md px-6 py-3 text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Start Your Quest
                     </a>
                     <!-- Secondary text link with hover state and arrow indicator -->
                     <!-- The arrow (→) provides a visual cue for the link's action -->
                     <!-- hover:text-[#2c1810] darkens the text on hover for better interaction feedback -->
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
+                    <a href="about-page.html" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
                         Learn more <span aria-hidden="true">→</span>
                     </a>
                 </div>

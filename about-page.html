@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - RPG Hub</title>
+    <title>About - RPG Hub</title>
     
+    <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="min-h-screen bg-white">
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="nav-container">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 justify-between">
@@ -52,58 +53,86 @@
         <div class="relative z-10 mx-auto max-w-7xl px-6 py-32 sm:py-96 lg:px-8">
             <div class="text-center hero-content p-10">
                 <h1 class="hero-title text-5xl font-bold tracking-tight sm:text-7xl">
-                    Contact Us
+                    About RPG Hub
                 </h1>
                 <p class="hero-text mt-8 text-xl font-medium">
-                    Have questions about RPG games? Want to share your thoughts? We'd love to hear from you!
+                    Your Gateway to Epic Adventures and Gaming Excellence
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Contact Section -->
+    <!-- About Section -->
     <section class="featured-section">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Contact Information -->
+                <!-- Our Story -->
                 <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">Get in Touch</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-center text-gray-300">
-                            <i class="fas fa-envelope w-6"></i>
-                            <span class="ml-4">contact@rpghub.com</span>
-                        </div>
-                        <div class="flex items-center text-gray-300">
-                            <i class="fas fa-phone w-6"></i>
-                            <span class="ml-4">(555) 123-4567</span>
-                        </div>
-                        <div class="flex items-center text-gray-300">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span class="ml-4">123 Gaming Street, Digital City, DC 12345</span>
-                        </div>
-                    </div>
+                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">Our Story</h2>
+                    <p class="text-gray-300 mb-6">
+                        RPG Hub was born from a passion for role-playing games and a desire to create a community where gamers can discover, discuss, and dive into the best RPG experiences. Founded by a team of dedicated gamers, we've grown into a thriving hub for RPG enthusiasts.
+                    </p>
+                    <p class="text-gray-300">
+                        Our mission is to help you find your next great adventure, whether you're a seasoned player or just starting your journey into the world of RPGs.
+                    </p>
                 </div>
 
-                <!-- Contact Form -->
+                <!-- What We Offer -->
                 <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">Send us a Message</h2>
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm"></textarea>
-                        </div>
-                        <button type="submit" class="quest-button w-full rounded-md px-4 py-2 text-sm font-semibold shadow-sm">
-                            Send Message
-                        </button>
-                    </form>
+                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">What We Offer</h2>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-gamepad w-6 text-[#d4c5a9]"></i>
+                            <span class="ml-4">Comprehensive game reviews and ratings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-users w-6 text-[#d4c5a9]"></i>
+                            <span class="ml-4">Vibrant community discussions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-book-open w-6 text-[#d4c5a9]"></i>
+                            <span class="ml-4">In-depth guides and tutorials</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-newspaper w-6 text-[#d4c5a9]"></i>
+                            <span class="ml-4">Latest RPG news and updates</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-[#d4c5a9] mb-16">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Game Reviews -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="text-[#d4c5a9] text-4xl mb-6">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-4">Game Reviews</h3>
+                    <p class="text-gray-300">In-depth analysis and honest reviews of the latest RPGs, helping you make informed decisions about your next gaming adventure.</p>
+                </div>
+
+                <!-- Community Hub -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="text-[#d4c5a9] text-4xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-4">Community Hub</h3>
+                    <p class="text-gray-300">Join our vibrant community of RPG enthusiasts, share experiences, and discover new gaming companions.</p>
+                </div>
+
+                <!-- Gaming Resources -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="text-[#d4c5a9] text-4xl mb-6">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-4">Gaming Resources</h3>
+                    <p class="text-gray-300">Access guides, tips, and strategies to enhance your gaming experience and master your favorite RPGs.</p>
                 </div>
             </div>
         </div>
@@ -172,4 +201,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

@@ -48,21 +48,19 @@
                     <!-- Logo container with flex properties to center the text -->
                     <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
                     <div class="flex flex-shrink-0 items-center">
-                        <!-- Custom color for the logo text using hex code -->
-                        <!-- The color #d4c5a9 provides a warm, fantasy-themed accent that complements the design -->
-                        <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
+                        <a href="index.html" class="hover:opacity-80 transition-opacity">
+                            <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
+                        </a>
                     </div>
                     
                     <!-- Navigation links with spacing between them -->
                     <!-- ml-6 adds margin to separate the links from the logo -->
                     <!-- space-x-8 ensures consistent spacing between navigation items -->
                     <div class="ml-6 flex space-x-8">
-                        <!-- Each link has the nav-button class for consistent styling -->
-                        <!-- The nav-button class (defined in styles.css) provides hover effects and transitions -->
-                        <a href="index.html" class="nav-button">Games</a>
-                        <a href="games-page.html" class="nav-button">Top Picks</a>
-                        <a href="community.html" class="nav-button">Community</a>
-                        <a href="#" class="nav-button">About</a>
+                        <a href="index.html" class="nav-button">Home</a>
+                        <a href="games-page.html" class="nav-button">Games</a>
+                        <a href="about-page.html" class="nav-button">About</a>
+                        <a href="contact-us.html" class="nav-button">Contact</a>
                     </div>
                 </div>
             </div>
@@ -142,6 +140,83 @@
             </div>
         </div>
     </div>
+
+    <!-- Game Reviews Section -->
+    <section class="featured-section" id="game-list">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl font-bold mb-12">Featured Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/fantasy-map-bg.jpg" alt="The Witcher 3: Wild Hunt - Epic fantasy RPG featuring Geralt of Rivia in a medieval world" class="w-full h-full object-cover brightness-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">The Witcher 3: Wild Hunt</h3>
+                        <p class="text-gray-300 mb-4">An epic action RPG set in a rich, open world fantasy universe full of meaningful choices and impactful consequences.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                            <div class="text-gray-400 text-sm italic">"A masterpiece of storytelling and world-building. The side quests are as compelling as the main story."</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2015</span>
+                            <a href="#" class="quest-button px-4 py-2">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/fantasy-map-bg.jpg" alt="Elden Ring - Open world action RPG set in a mystical realm with challenging combat" class="w-full h-full object-cover brightness-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Elden Ring</h3>
+                        <p class="text-gray-300 mb-4">A new fantasy action RPG from FromSoftware Inc. and George R.R. Martin that redefines open-world gaming.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                            <div class="text-gray-400 text-sm italic">"A stunning achievement in game design. The freedom to explore and discover is unmatched."</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2022</span>
+                            <a href="#" class="quest-button px-4 py-2">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/fantasy-map-bg.jpg" alt="Baldur's Gate 3 - Modern D&D RPG featuring deep storytelling and tactical combat" class="w-full h-full object-cover brightness-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Baldur's Gate 3</h3>
+                        <p class="text-gray-300 mb-4">A modern masterpiece that brings the depth of D&D to life with unprecedented freedom and stunning presentation.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                            <div class="text-gray-400 text-sm italic">"Sets a new standard for CRPGs with its incredible attention to detail and player choice."</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2023</span>
+                            <a href="#" class="quest-button px-4 py-2">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <!-- Footer with dark background and white text -->
