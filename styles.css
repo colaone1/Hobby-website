@@ -26,9 +26,10 @@ html, body {
     position: relative;
 }
 
+/* Remove absolute positioning that was causing issues */
 .nav-container .flex > div:first-child {
-    position: absolute;
-    left: 0;
+    /* position: absolute; */
+    /* left: 0; */
 }
 
 .nav-container .flex > div:nth-child(2) {

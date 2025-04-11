@@ -18,12 +18,14 @@
     <nav class="nav-container">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 justify-between items-center">
+                <!-- Logo container with flex properties to center the text -->
                 <div class="flex flex-shrink-0 items-center">
-                    <a href="index.html" class="hover:opacity-80 transition-opacity">
-                        <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
+                    <a href="index.html" class="logo-button">
+                        <span class="text-xl font-bold">RPG Hub</span>
                     </a>
                 </div>
                 
+                <!-- Navigation links with spacing between them -->
                 <div class="flex space-x-8">
                     <a href="index.html" class="nav-button">Home</a>
                     <a href="games-page.html" class="nav-button">Games</a>
@@ -45,9 +47,18 @@
                  role="img"
                  aria-label="Fantasy landscape background"></div>
             
+            <!-- Gradient overlays create a fade effect for better text readability -->
+            <!-- These gradients help create depth and ensure text remains readable regardless of background image -->
+            <!-- The multiple gradient layers create a sophisticated lighting effect -->
+            <!-- Top gradient fades from white to transparent -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
+            <!-- Bottom gradient fades from white to transparent -->
             <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
+            <!-- Subtle white overlay for additional contrast -->
+            <!-- The /10 opacity creates a soft, ethereal effect -->
             <div class="absolute inset-0 bg-white/10"></div>
+            <!-- Custom glow effect defined in CSS -->
+            <!-- This adds a magical atmosphere to the hero section -->
             <div class="hero-glow"></div>
         </div>
 
