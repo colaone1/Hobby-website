@@ -50,12 +50,21 @@
                 <div class="flex space-x-8">
                     <a href="index.html" class="nav-button">Home</a>
                     <a href="games-page.html" class="nav-button">Games</a>
+                    <a href="character-creator.html" class="nav-button">Character Creator</a>
                     <a href="about-page.html" class="nav-button">About</a>
                     <a href="contact-us.html" class="nav-button">Contact</a>
                 </div>
                 
-                <!-- Empty div to balance the layout -->
-                <div class="flex-shrink-0 w-[80px]"></div>
+                <!-- Dark mode toggle and empty div to balance the layout -->
+                <div class="flex-shrink-0 flex items-center space-x-4">
+                    <!-- Dark mode toggle button -->
+                    <!-- The button uses a sun icon for light mode and moon icon for dark mode -->
+                    <button id="darkModeToggle" class="text-[#d4c5a9] hover:text-white transition-colors" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun text-xl"></i>
+                    </button>
+                    <!-- Empty div to maintain layout balance -->
+                    <div class="w-[40px]"></div>
+                </div>
             </div>
         </div>
     </nav>
@@ -126,7 +135,7 @@
                     <!-- Secondary text link with hover state and arrow indicator -->
                     <!-- The arrow (→) provides a visual cue for the link's action -->
                     <!-- hover:text-[#2c1810] darkens the text on hover for better interaction feedback -->
-                    <a href="about-page.html" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
+                    <a href="about-page.html" class="text-sm font-semibold leading-6 text-brown-link hover:text-[#2c1810]">
                         Learn more <span aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -209,6 +218,15 @@
         </div>
     </section>
 
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- This button appears when scrolling down and allows users to quickly return to the top -->
+    <!-- Fixed positioning keeps it in view while scrolling -->
+    <!-- z-50 ensures it appears above other content -->
+    <!-- opacity-0 and pointer-events-none hide it by default -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-[#8b5e34] text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50 hover:bg-[#6a472a] focus:outline-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- ===== FOOTER ===== -->
     <!-- Footer with dark background and white text -->
     <!-- bg-gray-900 provides a dark, professional background that contrasts with the main content -->
@@ -217,34 +235,115 @@
         <!-- Container with max width and centered content -->
         <!-- max-w-7xl matches the width constraint of other sections for consistency -->
         <!-- py-12 adds vertical padding for better spacing -->
-        <div class="mx-auto max-w-7xl px-6 py-12 text-center">
-            <!-- Social media links with spacing between them -->
-            <!-- flex and justify-center ensure icons are properly aligned -->
-            <!-- space-x-6 provides consistent spacing between social icons -->
-            <div class="flex justify-center space-x-6">
-                <!-- Each social icon has hover state for better user interaction -->
-                <!-- text-gray-400 provides a subtle default state -->
-                <!-- hover:text-gray-300 brightens the icon on hover for better feedback -->
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <i class="fab fa-discord"></i>
-                </a>
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <!-- Footer content in a grid layout -->
+            <!-- grid-cols-1 shows one column on mobile, 2 on medium screens, 4 on large screens -->
+            <!-- gap-8 provides consistent spacing between columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- About section -->
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">About RPG Hub</h3>
+                    <p class="text-gray-400 mb-4">Your ultimate destination for discovering and exploring the best RPG games. We provide in-depth reviews, guides, and recommendations.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links section -->
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="games-page.html" class="text-gray-400 hover:text-white transition-colors">Games</a></li>
+                        <li><a href="about-page.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact-us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Game Categories section -->
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Game Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Action RPG</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Strategy RPG</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Open World</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Turn-Based</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter section -->
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest RPG news and reviews.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#8b5e34]">
+                        <button type="submit" class="quest-button px-4 py-2">Subscribe</button>
+                    </form>
+                </div>
             </div>
             
             <!-- Copyright information with smaller text size -->
-            <!-- mt-8 adds margin-top to separate from social icons -->
             <!-- text-xs ensures the copyright text is appropriately sized -->
-            <div class="mt-8">
+            <div class="border-t border-gray-800 pt-8">
                 <p class="text-center text-xs leading-5 text-gray-400">
                     &copy; 2025 RPG Hub. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
+    
+    <!-- JavaScript for dark mode toggle and back to top button -->
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+        }
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+            }
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show button when scrolling down
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
   </body>
 </html>

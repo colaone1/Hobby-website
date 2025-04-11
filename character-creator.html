@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator - RPG Hub</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-white">
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between items-center">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="index.html" class="logo-button">
+                        <span class="text-xl font-bold">RPG Hub</span>
+                    </a>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="games-page.html" class="nav-button">Games</a>
+                    <a href="character-creator.html" class="nav-button">Character Creator</a>
+                    <a href="about-page.html" class="nav-button">About</a>
+                    <a href="contact-us.html" class="nav-button">Contact</a>
+                </div>
+                
+                <!-- Dark mode toggle -->
+                <div class="flex-shrink-0 flex items-center space-x-4">
+                    <button id="darkModeToggle" class="text-[#d4c5a9] hover:text-white transition-colors" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section relative">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-150" 
+                 style="background-image: url('images/fantasy-map-bg.jpg');"
+                 role="img"
+                 aria-label="Fantasy landscape background"></div>
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-white/10"></div>
+            <div class="hero-glow"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-7xl px-6 py-32 sm:py-96 lg:px-8">
+            <div class="text-center hero-content p-10">
+                <h1 class="hero-title text-5xl font-bold tracking-tight sm:text-7xl">
+                    Character Creator
+                </h1>
+                <p class="hero-text mt-8 text-xl font-medium">
+                    Forge your legend with our powerful character creation tool
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Character Creator Section -->
+    <section class="featured-section py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Character Creation Form -->
+                <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">Create Your Character</h2>
+                    <form id="characterForm" class="space-y-6">
+                        <!-- Basic Info -->
+                        <div class="space-y-4">
+                            <div>
+                                <label for="charName" class="block text-[#d4c5a9] mb-2">Character Name</label>
+                                <input type="text" id="charName" name="charName" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-[#8b5e34]">
+                            </div>
+                            
+                            <div>
+                                <label for="charClass" class="block text-[#d4c5a9] mb-2">Class</label>
+                                <select id="charClass" name="charClass" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-[#8b5e34]">
+                                    <option value="">Select a class</option>
+                                    <option value="warrior">Warrior</option>
+                                    <option value="mage">Mage</option>
+                                    <option value="rogue">Rogue</option>
+                                    <option value="cleric">Cleric</option>
+                                    <option value="ranger">Ranger</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="charRace" class="block text-[#d4c5a9] mb-2">Race</label>
+                                <select id="charRace" name="charRace" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-[#8b5e34]">
+                                    <option value="">Select a race</option>
+                                    <option value="human">Human</option>
+                                    <option value="elf">Elf</option>
+                                    <option value="dwarf">Dwarf</option>
+                                    <option value="orc">Orc</option>
+                                    <option value="halfling">Halfling</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Attributes -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-[#d4c5a9]">Attributes</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="strength" class="block text-[#d4c5a9] mb-2">Strength</label>
+                                    <input type="range" id="strength" name="strength" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="strengthValue">10</span>
+                                </div>
+                                <div>
+                                    <label for="dexterity" class="block text-[#d4c5a9] mb-2">Dexterity</label>
+                                    <input type="range" id="dexterity" name="dexterity" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="dexterityValue">10</span>
+                                </div>
+                                <div>
+                                    <label for="constitution" class="block text-[#d4c5a9] mb-2">Constitution</label>
+                                    <input type="range" id="constitution" name="constitution" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="constitutionValue">10</span>
+                                </div>
+                                <div>
+                                    <label for="intelligence" class="block text-[#d4c5a9] mb-2">Intelligence</label>
+                                    <input type="range" id="intelligence" name="intelligence" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="intelligenceValue">10</span>
+                                </div>
+                                <div>
+                                    <label for="wisdom" class="block text-[#d4c5a9] mb-2">Wisdom</label>
+                                    <input type="range" id="wisdom" name="wisdom" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="wisdomValue">10</span>
+                                </div>
+                                <div>
+                                    <label for="charisma" class="block text-[#d4c5a9] mb-2">Charisma</label>
+                                    <input type="range" id="charisma" name="charisma" min="1" max="20" value="10" class="w-full">
+                                    <span class="text-gray-300" id="charismaValue">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appearance -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-[#d4c5a9]">Appearance</h3>
+                            <div>
+                                <label for="hairColor" class="block text-[#d4c5a9] mb-2">Hair Color</label>
+                                <input type="color" id="hairColor" name="hairColor" class="w-full h-10 rounded-lg cursor-pointer">
+                            </div>
+                            <div>
+                                <label for="eyeColor" class="block text-[#d4c5a9] mb-2">Eye Color</label>
+                                <input type="color" id="eyeColor" name="eyeColor" class="w-full h-10 rounded-lg cursor-pointer">
+                            </div>
+                            <div>
+                                <label for="skinTone" class="block text-[#d4c5a9] mb-2">Skin Tone</label>
+                                <input type="color" id="skinTone" name="skinTone" class="w-full h-10 rounded-lg cursor-pointer">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="quest-button w-full py-3">Create Character</button>
+                    </form>
+                </div>
+
+                <!-- Character Preview -->
+                <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-[#d4c5a9] mb-6">Character Preview</h2>
+                    <div id="characterPreview" class="space-y-6">
+                        <div class="text-center text-gray-300">
+                            <p>Fill out the form to see your character preview</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">About RPG Hub</h3>
+                    <p class="text-gray-400 mb-4">Your ultimate destination for discovering and exploring the best RPG games.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="games-page.html" class="text-gray-400 hover:text-white transition-colors">Games</a></li>
+                        <li><a href="character-creator.html" class="text-gray-400 hover:text-white transition-colors">Character Creator</a></li>
+                        <li><a href="about-page.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact-us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Game Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Action RPG</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Strategy RPG</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Open World</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Turn-Based</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-[#d4c5a9] mb-4">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest RPG news and reviews.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#8b5e34]">
+                        <button type="submit" class="quest-button px-4 py-2">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-center text-xs leading-5 text-gray-400">
+                    &copy; 2025 RPG Hub. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+        }
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+            }
+        });
+
+        // Character creation form functionality
+        const characterForm = document.getElementById('characterForm');
+        const characterPreview = document.getElementById('characterPreview');
+        
+        // Update attribute value displays
+        const attributeInputs = document.querySelectorAll('input[type="range"]');
+        attributeInputs.forEach(input => {
+            const valueDisplay = document.getElementById(`${input.id}Value`);
+            input.addEventListener('input', () => {
+                valueDisplay.textContent = input.value;
+            });
+        });
+
+        // Handle form submission
+        characterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(characterForm);
+            const character = Object.fromEntries(formData);
+            
+            // Update preview
+            characterPreview.innerHTML = `
+                <div class="space-y-4">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-[#d4c5a9]">${character.charName || 'Unnamed Character'}</h3>
+                        <p class="text-gray-300">${character.charRace || 'Unknown Race'} ${character.charClass || 'Unknown Class'}</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="text-[#d4c5a9] font-bold">Attributes</h4>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>Strength: ${character.strength}</li>
+                                <li>Dexterity: ${character.dexterity}</li>
+                                <li>Constitution: ${character.constitution}</li>
+                                <li>Intelligence: ${character.intelligence}</li>
+                                <li>Wisdom: ${character.wisdom}</li>
+                                <li>Charisma: ${character.charisma}</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#d4c5a9] font-bold">Appearance</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <span class="text-gray-300 mr-2">Hair:</span>
+                                    <div class="w-6 h-6 rounded-full" style="background-color: ${character.hairColor}"></div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-300 mr-2">Eyes:</span>
+                                    <div class="w-6 h-6 rounded-full" style="background-color: ${character.eyeColor}"></div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-300 mr-2">Skin:</span>
+                                    <div class="w-6 h-6 rounded-full" style="background-color: ${character.skinTone}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html> 
