@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -15,11 +15,82 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Navigation */
+/* ===== NAVIGATION STYLES ===== */
 .nav-container {
     background: rgba(31, 41, 55, 0.95);
     border-bottom: 2px solid #8b5e34;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container .flex {
+    position: relative;
+}
+
+.nav-container .flex > div:first-child {
+    position: absolute;
+    left: 0;
+}
+
+.nav-container .flex > div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container .flex > div:last-child {
+    width: 80px;
+    visibility: hidden;
+}
+
+/* Logo button styling */
+.logo-button {
+    display: block;
+    position: relative;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.logo-button span {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #d4c5a9;
+    transition: color 0.3s ease;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #d4c5a9, #f0e6d6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+.logo-button span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #8b5e34, #d4c5a9);
+    opacity: 0.7;
+}
+
+.logo-button:hover {
+    opacity: 0.9;
+}
+
+.logo-button:hover span {
+    background: linear-gradient(to right, #f0e6d6, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo-button:hover span::after {
+    opacity: 1;
 }
 
 .nav-button {
@@ -49,7 +120,7 @@ html, body {
     width: 80%;
 }
 
-/* Hero section */
+/* ===== HERO SECTION STYLES ===== */
 .hero-section {
     position: relative;
     min-height: 600px;
@@ -105,6 +176,7 @@ html, body {
     color: #4b3829;
 }
 
+/* ===== BUTTON STYLES ===== */
 .quest-button {
     background: #8b5e34 !important;
     border: 1px solid #6a472a;
@@ -116,7 +188,7 @@ html, body {
     background: #6a472a !important;
 }
 
-/* Featured Games Section */
+/* ===== FEATURED SECTION STYLES ===== */
 .featured-section {
     background: #1f2937;
     padding: 4rem 0;
@@ -140,6 +212,7 @@ html, body {
     margin-bottom: 2.5rem;
 }
 
+/* ===== GAME CARD STYLES ===== */
 .game-card {
     background: #f4ece1;
     border: 1px solid #8b5e34;
@@ -176,7 +249,7 @@ html, body {
     line-height: 1.5;
 }
 
-/* Footer styling */
+/* ===== FOOTER STYLES ===== */
 footer {
     background-color: #1f2937;
     color: white;
@@ -184,13 +257,13 @@ footer {
     margin-top: auto;
 }
 
-/* Main content spacing */
+/* ===== LAYOUT STYLES ===== */
 main {
     flex: 1;
-    margin-top: 0; /* Height of the fixed navbar */
+    margin-top: 0;
 }
 
-/* Utility classes */
+/* ===== UTILITY CLASSES ===== */
 .text-gradient {
     background-clip: text;
     -webkit-background-clip: text;

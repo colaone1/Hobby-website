@@ -2,34 +2,23 @@
 <!-- This declares that this is an HTML5 document, enabling modern browser features and ensuring proper rendering -->
 <html lang="en">
   <head>
-    <!-- The head section contains metadata and links to external resources that are essential for the page's functionality and appearance -->
-    
-    <!-- Basic meta information for character encoding and responsive design -->
-    <!-- UTF-8 encoding ensures proper display of special characters and symbols across all devices -->
+    <!-- ===== META TAGS ===== -->
     <meta charset="UTF-8">
-    <!-- This viewport meta tag ensures the site is responsive on mobile devices by setting the initial scale and preventing unwanted zooming -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The title appears in the browser tab and is crucial for SEO and user experience -->
     <title>RPG Hub - Your Next Adventure Awaits</title>
     
-    <!-- CSS and JavaScript libraries -->
-    <!-- Tailwind CSS is loaded via CDN for utility-first styling, eliminating the need for custom CSS in most cases -->
-    <!-- This approach provides consistent styling and rapid development while maintaining flexibility -->
+    <!-- ===== EXTERNAL RESOURCES ===== -->
+    <!-- Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS file for any styles not covered by Tailwind, allowing for unique design elements -->
+    <!-- Custom CSS for unique design elements -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Google Fonts - Cinzel is a decorative font that fits the fantasy theme -->
-    <!-- Preconnect improves loading performance by establishing early connections to required domains -->
-    <!-- This optimization reduces the time needed to load external resources -->
+    <!-- Google Fonts - Cinzel for fantasy theme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Loading the Cinzel font in different weights provides flexibility for various text styles -->
-    <!-- The font weights (400, 600, 700) correspond to regular, semi-bold, and bold respectively -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome icons for social media and UI elements -->
-    <!-- This library provides a comprehensive set of icons that are scalable and customizable -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   
@@ -47,26 +36,26 @@
             <!-- Flex container for horizontal layout with space between elements -->
             <!-- h-16 sets a consistent height for the navigation bar -->
             <!-- justify-between ensures proper spacing between logo and navigation links -->
-            <div class="flex h-16 justify-between">
-                <div class="flex">
-                    <!-- Logo container with flex properties to center the text -->
-                    <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
-                    <div class="flex flex-shrink-0 items-center">
-                        <a href="index.html" class="hover:opacity-80 transition-opacity">
-                            <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Navigation links with spacing between them -->
-                    <!-- ml-6 adds margin to separate the links from the logo -->
-                    <!-- space-x-8 ensures consistent spacing between navigation items -->
-                    <div class="ml-6 flex space-x-8">
-                        <a href="index.html" class="nav-button">Home</a>
-                        <a href="games-page.html" class="nav-button">Games</a>
-                        <a href="about-page.html" class="nav-button">About</a>
-                        <a href="contact-us.html" class="nav-button">Contact</a>
-                    </div>
+            <div class="flex h-16 justify-between items-center">
+                <!-- Logo container with flex properties to center the text -->
+                <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="index.html" class="logo-button">
+                        <span class="text-xl font-bold">RPG Hub</span>
+                    </a>
                 </div>
+                
+                <!-- Navigation links with spacing between them -->
+                <!-- space-x-8 ensures consistent spacing between navigation items -->
+                <div class="flex space-x-8">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="games-page.html" class="nav-button">Games</a>
+                    <a href="about-page.html" class="nav-button">About</a>
+                    <a href="contact-us.html" class="nav-button">Contact</a>
+                </div>
+                
+                <!-- Empty div to balance the layout -->
+                <div class="flex-shrink-0 w-[80px]"></div>
             </div>
         </div>
     </nav>
@@ -144,6 +133,81 @@
             </div>
         </div>
     </div>
+
+    <!-- ===== FEATURED GAMES SECTION ===== -->
+    <section class="featured-section py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl font-bold mb-12">Featured Games</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card 1: The Witcher 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/witcher3.png" alt="The Witcher 3: Wild Hunt - Geralt on horseback overlooking a majestic mountain landscape" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">The Witcher 3: Wild Hunt</h3>
+                        <p class="text-gray-300 mb-4">An epic action RPG set in a rich, open world fantasy universe full of meaningful choices and impactful consequences.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2015</span>
+                            <a href="games-page.html#witcher3" class="quest-button px-4 py-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 2: Elden Ring -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/eldenring.jpg.webp" alt="Elden Ring - Epic battle scene with a winged creature and magical combat" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Elden Ring</h3>
+                        <p class="text-gray-300 mb-4">A new fantasy action RPG from FromSoftware Inc. and George R.R. Martin that redefines open-world gaming.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2022</span>
+                            <a href="games-page.html#eldenring" class="quest-button px-4 py-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 3: Baldur's Gate 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="w-full h-48 relative">
+                        <img src="images/baldursgate.jpg.jpg" alt="Baldur's Gate 3 - Majestic castle city perched on a mountain with stunning architecture" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Baldur's Gate 3</h3>
+                        <p class="text-gray-300 mb-4">A modern masterpiece that brings the depth of D&D to life with unprecedented freedom and stunning presentation.</p>
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500 mr-2">★★★★★</span>
+                                <span class="text-gray-400 text-sm">5.0/5.0</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Release: 2023</span>
+                            <a href="games-page.html#baldursgate3" class="quest-button px-4 py-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <!-- Footer with dark background and white text -->

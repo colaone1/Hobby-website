@@ -4,22 +4,22 @@
 <head>
     <!-- The head section contains metadata and links to external resources that are essential for the page's functionality and appearance -->
     
+    <!-- ===== META TAGS ===== -->
     <!-- Basic meta information for character encoding and responsive design -->
     <!-- UTF-8 encoding ensures proper display of special characters and symbols across all devices -->
     <meta charset="UTF-8">
     <!-- This viewport meta tag ensures the site is responsive on mobile devices by setting the initial scale and preventing unwanted zooming -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The title appears in the browser tab and is crucial for SEO and user experience -->
-    <title>RPG Hub - Top Picks</title>
+    <title>Games - RPG Hub</title>
     
-    <!-- CSS and JavaScript libraries -->
-    <!-- Tailwind CSS is loaded via CDN for utility-first styling, eliminating the need for custom CSS in most cases -->
-    <!-- This approach provides consistent styling and rapid development while maintaining flexibility -->
+    <!-- ===== EXTERNAL RESOURCES ===== -->
+    <!-- Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS file for any styles not covered by Tailwind, allowing for unique design elements -->
+    <!-- Custom CSS for unique design elements -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Google Fonts - Cinzel is a decorative font that fits the fantasy theme -->
+    <!-- Google Fonts - Cinzel for fantasy theme -->
     <!-- Preconnect improves loading performance by establishing early connections to required domains -->
     <!-- This optimization reduces the time needed to load external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
     <!-- The font weights (400, 600, 700) correspond to regular, semi-bold, and bold respectively -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome icons for social media and UI elements -->
+    <!-- Font Awesome for icons -->
     <!-- This library provides a comprehensive set of icons that are scalable and customizable -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -43,26 +43,26 @@
             <!-- Flex container for horizontal layout with space between elements -->
             <!-- h-16 sets a consistent height for the navigation bar -->
             <!-- justify-between ensures proper spacing between logo and navigation links -->
-            <div class="flex h-16 justify-between">
-                <div class="flex">
-                    <!-- Logo container with flex properties to center the text -->
-                    <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
-                    <div class="flex flex-shrink-0 items-center">
-                        <a href="index.html" class="hover:opacity-80 transition-opacity">
-                            <span class="text-xl font-bold text-[#d4c5a9]">RPG Hub</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Navigation links with spacing between them -->
-                    <!-- ml-6 adds margin to separate the links from the logo -->
-                    <!-- space-x-8 ensures consistent spacing between navigation items -->
-                    <div class="ml-6 flex space-x-8">
-                        <a href="index.html" class="nav-button">Home</a>
-                        <a href="games-page.html" class="nav-button">Games</a>
-                        <a href="about-page.html" class="nav-button">About</a>
-                        <a href="contact-us.html" class="nav-button">Contact</a>
-                    </div>
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo container with flex properties to center the text -->
+                <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="logo-button">
+                        <span class="text-xl font-bold">RPG Hub</span>
+                    </a>
                 </div>
+                
+                <!-- Navigation links with spacing between them -->
+                <!-- space-x-8 ensures consistent spacing between navigation items -->
+                <div class="flex space-x-8">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="games-page.html" class="nav-button">Games</a>
+                    <a href="about-page.html" class="nav-button">About</a>
+                    <a href="contact-us.html" class="nav-button">Contact</a>
+                </div>
+                
+                <!-- Empty div to balance the layout -->
+                <div class="flex-shrink-0 w-[80px]"></div>
             </div>
         </div>
     </nav>
@@ -80,7 +80,9 @@
             <!-- The brightness-150 class makes the image brighter to ensure text readability -->
             <!-- bg-cover and bg-center ensure the image fills the space properly -->
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-150" 
-                 style="background-image: url('images/fantasy-map-bg.jpg');"></div>
+                 style="background-image: url('images/fantasy-map-bg.jpg');"
+                 role="img"
+                 aria-label="Fantasy landscape background"></div>
             
             <!-- Gradient overlays create a fade effect for better text readability -->
             <!-- These gradients help create depth and ensure text remains readable regardless of background image -->
@@ -133,7 +135,7 @@
                     <!-- Secondary text link with hover state and arrow indicator -->
                     <!-- The arrow (→) provides a visual cue for the link's action -->
                     <!-- hover:text-[#2c1810] darkens the text on hover for better interaction feedback -->
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
+                    <a href="about-page.html" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
                         Learn more <span aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -141,38 +143,117 @@
         </div>
     </div>
 
-    <!-- Game Reviews Section -->
+    <!-- ===== GAME REVIEWS SECTION ===== -->
+    <!-- This section displays featured game reviews in a responsive grid layout -->
+    <!-- The id="game-list" allows for smooth scrolling from the hero section button -->
     <section class="featured-section" id="game-list">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-3xl font-bold mb-12">Featured Reviews</h2>
+            
+            <!-- Search and Filter Section -->
+            <div class="mb-8">
+                <!-- Search Bar -->
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search games..." class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-[#8b5e34]">
+                        <button class="absolute right-3 top-2 text-gray-400 hover:text-white">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <button class="px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">
+                        All Games
+                    </button>
+                    <button class="px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">
+                        Action RPG
+                    </button>
+                    <button class="px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">
+                        Strategy RPG
+                    </button>
+                    <button class="px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">
+                        Open World
+                    </button>
+                </div>
+                
+                <!-- Sort Dropdown -->
+                <div class="flex justify-end mb-4">
+                    <select class="px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-[#8b5e34]">
+                        <option value="rating">Sort by Rating</option>
+                        <option value="release">Sort by Release Date</option>
+                        <option value="name">Sort by Name</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Responsive grid layout for game cards -->
+            <!-- grid-cols-1 shows one column on mobile, 2 on medium screens, 3 on large screens -->
+            <!-- gap-8 provides consistent spacing between cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card 1 -->
+                <!-- Game Card 1: The Witcher 3 -->
+                <!-- Each card has a dark background, rounded corners, and shadow for depth -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <!-- Image container with fixed height and relative positioning -->
+                    <!-- The relative positioning allows for absolute positioning of the overlay -->
                     <div class="w-full h-48 relative">
-                        <img src="images/fantasy-map-bg.jpg" alt="The Witcher 3: Wild Hunt - Epic fantasy RPG featuring Geralt of Rivia in a medieval world" class="w-full h-full object-cover brightness-110">
+                        <!-- Game image with object-cover to maintain aspect ratio -->
+                        <img src="images/witcher3.png" alt="The Witcher 3: Wild Hunt - Geralt on horseback overlooking a majestic mountain landscape" class="w-full h-full object-cover">
+                        <!-- Gradient overlay that fades from dark to transparent -->
+                        <!-- This creates a smooth transition between the image and content -->
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
                     </div>
+                    
+                    <!-- Card content with padding -->
+                    <!-- p-6 adds consistent padding around all content -->
                     <div class="p-6">
+                        <!-- Game title with custom color and spacing -->
+                        <!-- text-xl sets a large font size, font-bold makes it stand out -->
+                        <!-- mb-2 adds margin below the title -->
                         <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">The Witcher 3: Wild Hunt</h3>
+                        
+                        <!-- Game description with light gray text -->
+                        <!-- text-gray-300 provides good contrast against the dark background -->
+                        <!-- mb-4 adds margin below the description -->
                         <p class="text-gray-300 mb-4">An epic action RPG set in a rich, open world fantasy universe full of meaningful choices and impactful consequences.</p>
+                        
+                        <!-- Rating and review quote container -->
+                        <!-- mb-4 adds margin below this section -->
                         <div class="mb-4">
+                            <!-- Star rating display with yellow stars -->
+                            <!-- flex and items-center align the stars and text -->
+                            <!-- mb-2 adds margin below the rating -->
                             <div class="flex items-center mb-2">
                                 <span class="text-yellow-500 mr-2">★★★★★</span>
                                 <span class="text-gray-400 text-sm">5.0/5.0</span>
                             </div>
+                            
+                            <!-- Review quote in italic with lighter text -->
+                            <!-- text-sm makes the quote smaller than the main text -->
+                            <!-- italic adds emphasis to the quote -->
                             <div class="text-gray-400 text-sm italic">"A masterpiece of storytelling and world-building. The side quests are as compelling as the main story."</div>
                         </div>
+                        
+                        <!-- Footer with release date and action button -->
+                        <!-- flex and justify-between align items horizontally with space between -->
+                        <!-- items-center vertically centers the elements -->
                         <div class="flex justify-between items-center">
+                            <!-- Release date with smaller, lighter text -->
                             <span class="text-gray-400 text-sm">Release: 2015</span>
+                            
+                            <!-- Action button using the quest-button class for consistent styling -->
+                            <!-- px-4 py-2 adds padding for proper button size -->
                             <a href="#" class="quest-button px-4 py-2">Read Review</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Game Card 2 -->
+                <!-- Game Card 2: Elden Ring -->
+                <!-- Structure identical to the first card with different content -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                     <div class="w-full h-48 relative">
-                        <img src="images/fantasy-map-bg.jpg" alt="Elden Ring - Open world action RPG set in a mystical realm with challenging combat" class="w-full h-full object-cover brightness-110">
+                        <img src="images/eldenring.jpg.webp" alt="Elden Ring - Epic battle scene with a winged creature and magical combat" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
                     </div>
                     <div class="p-6">
@@ -192,10 +273,11 @@
                     </div>
                 </div>
                 
-                <!-- Game Card 3 -->
+                <!-- Game Card 3: Baldur's Gate 3 -->
+                <!-- Structure identical to the first two cards with different content -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                     <div class="w-full h-48 relative">
-                        <img src="images/fantasy-map-bg.jpg" alt="Baldur's Gate 3 - Modern D&D RPG featuring deep storytelling and tactical combat" class="w-full h-full object-cover brightness-110">
+                        <img src="images/baldursgate.jpg.jpg" alt="Baldur's Gate 3 - Majestic castle city perched on a mountain with stunning architecture" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
                     </div>
                     <div class="p-6">
